@@ -17,9 +17,11 @@ namespace http
         using port_type = uint16_t;
     private:
         listener_type listener;
+        CURLM* curl_handle;
     public:
         http_server(const listener_type _listener);
         void listen(port_type port);
+        ~http_server();
     };
 }
 
